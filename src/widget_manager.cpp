@@ -40,7 +40,7 @@ void widget_manager::init_messages_frame ()
 
     m_message_entry = sfg::Entry::Create();
     m_message_entry->SetClass("textSet");
-    m_message_entry->SetRequisition(sf::Vector2f(850.0f, 0.0f));
+    m_message_entry->SetRequisition(sf::Vector2f(425.0f, 0.0f));
 
     auto box = create_vertical_box();
     auto box_1 = create_horizontal_box();

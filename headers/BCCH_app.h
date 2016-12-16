@@ -25,8 +25,8 @@ private:
     void render_screen (sf::RenderWindow &render_window);
 
 private:
-    const unsigned int SCREEN_WIDTH = 1280;
-    const unsigned int SCREEN_HEIGHT = 1280;
+    const unsigned int SCREEN_WIDTH = 640;
+    const unsigned int SCREEN_HEIGHT = 640;
 
     sfg::SFGUI m_sfgui;
     sfg::Desktop m_desktop;
