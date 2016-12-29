@@ -13,7 +13,7 @@
 class widget_manager
 {
 public:
-    void init_window (sfg::Desktop &desktop, int screen_width, int screen_height);
+    void init_window (sfg::Desktop &desktop, unsigned int screen_width, unsigned int screen_height);
 
 private:
     void send_message ();
@@ -29,8 +29,8 @@ private:
     sfg::Window::Ptr create_window (sfg::Box::Ptr content, int screen_width, int screen_height);
 
 private:
-    const unsigned int FONT_SIZE = 20;
-    const unsigned int FRAME_FONT_SIZE = 15;
+    unsigned int FONT_SIZE;
+    unsigned int FRAME_FONT_SIZE;
 
     pubnub_interface m_pn_interface;
     sfg::Entry::Ptr m_message_entry;

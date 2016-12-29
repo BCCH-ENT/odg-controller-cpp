@@ -120,8 +120,11 @@ void widget_manager::init_widgets ()
     init_view_frame();
 }
 
-void widget_manager::init_window (sfg::Desktop &desktop, int screen_width, int screen_height)
+void widget_manager::init_window (sfg::Desktop &desktop, unsigned int screen_width, unsigned int screen_height)
 {
+    FONT_SIZE = screen_width / 32;
+    FRAME_FONT_SIZE = (unsigned) (FONT_SIZE * 0.75f);
+
     init_widgets();
 
     auto content = create_vertical_box();

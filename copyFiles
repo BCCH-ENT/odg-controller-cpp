@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo rsync -vua libs/Frameworks/. /Library/Frameworks/
+rsync -vua libs/libsfgui.dylib /usr/local/lib/

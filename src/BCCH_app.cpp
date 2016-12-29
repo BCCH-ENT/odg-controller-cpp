@@ -5,8 +5,10 @@
 #include "BCCH_app.h"
 #include <widget_manager.h>
 
-BCCH_app::BCCH_app() :
-    l_pedal_pressed(false)
+BCCH_app::BCCH_app(unsigned int width, unsigned int height) :
+    l_pedal_pressed(false),
+    SCREEN_WIDTH(width),
+    SCREEN_HEIGHT(height)
 {
 }
 

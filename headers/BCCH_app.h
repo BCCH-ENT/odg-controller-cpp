@@ -17,7 +17,7 @@
 class BCCH_app
 {
 public:
-    BCCH_app ();
+    BCCH_app (unsigned int width, unsigned int height);
     void Run ();
 
 private:
@@ -25,8 +25,8 @@ private:
     void render_screen (sf::RenderWindow &render_window);
 
 private:
-    const unsigned int SCREEN_WIDTH = 640;
-    const unsigned int SCREEN_HEIGHT = 640;
+    const unsigned int SCREEN_WIDTH;
+    const unsigned int SCREEN_HEIGHT;
 
     sfg::SFGUI m_sfgui;
     sfg::Desktop m_desktop;

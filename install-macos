@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PATH="/Applications/CMake.app/Contents/bin":"$PATH"
+cd "${0%/*}"
+
+./InstallCommandLineTools
+./copyFiles
+
+cmake CMakeLists.txt
+make install

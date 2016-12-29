@@ -6,6 +6,8 @@ project(odg-controller)
 ## Instruct CMake to run moc automatically when needed.
 #set(CMAKE_AUTOMOC ON)
 
+set(CMAKE_OSX_DEPLOYMENT_TARGET 10.9)
+
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
@@ -102,7 +104,13 @@ add_library(pubnub_sync_posix SHARED ${PUBNUB_FILES} ${POSIX_FILES} ${SYNC_POSIX
 #add_library(pubnub_callback_windows SHARED ${PUBNUB_FILES} ${WINDOWS_FILES} ${CALLBACK_WINDOWS})
 #add_library(pubnub_sync_windows SHARED ${PUBNUB_FILES} ${WINDOWS_FILES} ${SYNC_POSIX_WINDOWS})
 
-add_executable(Test ${TEST_SOURCE_FILES})
+#add_executable(Test ${TEST_SOURCE_FILES})
 add_executable(BCCH ${BCCH_SOURCE_FILES})
-target_link_libraries(Test pubnub_callback_posix)
+#target_link_libraries(Test pubnub_callback_posix)
 target_link_libraries(BCCH pubnub_callback_posix ${SFGUI_LIBRARY} ${SFML_LIBRARIES})
+
+install(TARGETS BCCH pubnub_callback_posix pubnub_sync_posix
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static
+        )
