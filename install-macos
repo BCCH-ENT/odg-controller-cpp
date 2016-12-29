@@ -6,5 +6,10 @@ cd "${0%/*}"
 ./InstallCommandLineTools
 ./copyFiles
 
+cd SFGUI-0.3.1/
 cmake CMakeLists.txt
-make install
+sudo make install
+
+cd ../
+cmake CMakeLists.txt
+sudo make install

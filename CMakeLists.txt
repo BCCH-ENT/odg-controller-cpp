@@ -55,7 +55,7 @@ set(POSIX_FILES
         libs/c-core/posix/pubnub_version_posix.c
         libs/c-core/posix/pubnub_generate_uuid_posix.c
         libs/c-core/posix/pbpal_posix_blocking_io.c
-        libs/c-core/posix/monotonic_clock_get_time_posix.c
+        libs/c-core/posix/monotonic_clock_get_time_darwin.c
         )
 set(WINDOWS_FILES
         libs/c-core/windows/pubnub_version_windows.c
@@ -100,7 +100,7 @@ add_definitions(
 )
 
 add_library(pubnub_callback_posix SHARED ${PUBNUB_FILES} ${POSIX_FILES} ${CALLBACK_POSIX})
-add_library(pubnub_sync_posix SHARED ${PUBNUB_FILES} ${POSIX_FILES} ${SYNC_POSIX_WINDOWS})
+#add_library(pubnub_sync_posix SHARED ${PUBNUB_FILES} ${POSIX_FILES} ${SYNC_POSIX_WINDOWS})
 #add_library(pubnub_callback_windows SHARED ${PUBNUB_FILES} ${WINDOWS_FILES} ${CALLBACK_WINDOWS})
 #add_library(pubnub_sync_windows SHARED ${PUBNUB_FILES} ${WINDOWS_FILES} ${SYNC_POSIX_WINDOWS})
 
@@ -109,7 +109,7 @@ add_executable(BCCH ${BCCH_SOURCE_FILES})
 #target_link_libraries(Test pubnub_callback_posix)
 target_link_libraries(BCCH pubnub_callback_posix ${SFGUI_LIBRARY} ${SFML_LIBRARIES})
 
-install(TARGETS BCCH pubnub_callback_posix pubnub_sync_posix
+install(TARGETS BCCH pubnub_callback_posix
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib/static
