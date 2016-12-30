@@ -1,0 +1,15 @@
+#!/bin/sh
+cd "${0%/*}"
+
+sudo apt-get update 
+sudo apt-get upgrade
+sudo apt-get install cmake
+sudo apt-get install libsfml-dev
+
+cd SFGUI-0.3.1/
+cmake CMakeLists.txt
+sudo make install
+
+cd ../
+cmake CMakeLists.txt
+sudo make install
