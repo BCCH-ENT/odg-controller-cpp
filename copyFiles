@@ -2,3 +2,4 @@
 
 sudo rsync -vua SFML-2.4.1/lib/. /usr/local/lib/
 sudo rsync -vua SFML-2.4.1/include/. /usr/local/include
+sudo rsync -vua libs/Frameworks/. /Library/Frameworks
